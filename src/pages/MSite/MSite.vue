@@ -131,28 +131,28 @@
 </template>
 
 <script>
-  import HeaderTop from '../../components/HeaderTop/HeaderTop'
-  import ShopList from '../../components/ShopList/ShopList'
-  import Swiper from 'swiper'
-  import 'swiper/dist/css/swiper.min.css'
+import HeaderTop from '../../components/HeaderTop/HeaderTop'
+import ShopList from '../../components/ShopList/ShopList'
+import Swiper from 'swiper'
+import 'swiper/dist/css/swiper.min.css'
 
-  export default {
-    name: "MSite",
-    mounted(){
-      // 创建一个Swiper对象，来实现轮播
-      new Swiper('.swiper-container',{
-        loop: true, // 循环轮播
-        pagination: {
-          el: '.swiper-pagination'
-        }
+export default {
+  name: "MSite",
+  mounted(){
+    // 创建一个Swiper对象，来实现轮播
+    new Swiper('.swiper-container',{
+      loop: true, // 循环轮播
+      pagination: {
+        el: '.swiper-pagination'
+      }
 
-      })
-    },
-    components:{
-        HeaderTop,
-        ShopList
-    }
+    })
+  },
+  components:{
+      HeaderTop,
+      ShopList
   }
+}
 </script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">

@@ -9,9 +9,13 @@
 <script>
 
 import FooterGuide from './components/FooterGuide/FooterGuide'
+import {reqFoodCategorys} from "./api"
 
 export default {
   name: 'App',
+  mounted(){
+    this.$store.dispatch('getAddress')
+  },
   components: {
     FooterGuide
   }

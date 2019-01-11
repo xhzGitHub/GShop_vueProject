@@ -3,13 +3,14 @@
 函数的返回值：promise对象
  */
 import ajax from './ajax'
+// const base_url = 'http://localhost:4000'
+const base_url = '/api'
 // [1、根据经纬度获取位置详情](#1根据经纬度获取位置详情)<br/>
-export const reqAddress = (geohash) => ajax('/position/{$geohash}')
+export const reqAddress = (geohash) => ajax(`${base_url}/position/${geohash}`)
 // [2、获取食品分类列表](#2获取食品分类列表)<br/>
-export const reqFoodTypes = () => ajax('/index_category')
-
+export const reqFoodCategorys = () => ajax(base_url + '/index_category')
 // [3、根据经纬度获取商铺列表](#3根据经纬度获取商铺列表)<br/>
-export const reqShopList = (longitude,latitude) => ajax('/shops',{longitude,latitude})
+export const reqShopList = (longitude,latitude) => ajax(base_url + '/shops',{longitude,latitude})
 
 // [4、根据经纬度和关键字搜索商铺列表](#4根据经纬度和关键字搜索商铺列表)<br/>
 
