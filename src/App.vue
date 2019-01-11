@@ -10,11 +10,16 @@
 
 import FooterGuide from './components/FooterGuide/FooterGuide'
 import {reqFoodCategorys} from "./api"
+import {mapActions} from 'vuex'
 
 export default {
   name: 'App',
   mounted(){
-    this.$store.dispatch('getAddress')
+    this.$store.dispatch('getAddress')    // 写法一
+    // this.getAddress();   // 写法二
+  },
+  methods: {
+    // ...mapActions(['getAddress'])
   },
   components: {
     FooterGuide
