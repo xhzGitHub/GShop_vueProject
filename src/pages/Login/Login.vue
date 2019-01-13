@@ -5,13 +5,13 @@
         <div class="login_header">
           <h2 class="login_logo">硅谷外卖</h2>
           <div class="login_header_title">
-            <a href="javascript:;" class="on">短信登录</a>
-            <a href="javascript:;">密码登录</a>
+            <a href="javascript:;" :class="{on: loginway}" @click="loginway = true">短信登录</a>
+            <a href="javascript:;" :class="{on: !loginway}" @click="loginway = false">密码登录</a>
           </div>
         </div>
         <div class="login_content">
           <form>
-            <div class="on">
+            <div :class="{on: loginway}">
               <section class="login_message">
                 <input type="tel" maxlength="11" placeholder="手机号">
                 <button disabled="disabled" class="get_verification">获取验证码</button>
@@ -24,7 +24,7 @@
                 <a href="javascript:;">《用户服务协议》</a>
               </section>
             </div>
-            <div>
+            <div :class="{on: !loginway}">
               <section>
                 <section class="login_message">
                   <input type="tel" maxlength="11" placeholder="手机/邮箱/用户名">
@@ -47,6 +47,7 @@
           <a href="javascript:;" class="about_us">关于我们</a>
         </div>
         <a href="javascript:" class="go_back" @click="$router.back()">
+          <!--$router.back() 代表路由向后退一个-->
           <i class="iconfont icon-jiantou2"></i>
         </a>
       </div>
@@ -56,7 +57,13 @@
 
 <script>
     export default {
-        name: "Login"
+      name: "Login",
+      data() {
+          return {
+            loginway: true,     // true代表短信登录，false代表密码登录
+          }
+      },
+
     }
 </script>
 

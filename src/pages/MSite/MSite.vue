@@ -13,7 +13,7 @@
     <!--首页导航-->
     <nav class="nav">
       <div class="swiper-container">
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper" v-if="categorysArr.length">
           <div class="swiper-slide" v-for="(categorys,index) in categorysArr">
             <a href="javascript:" class="link_to_food" v-for="(category,index) in categorys">
               <div class="food_container">
@@ -24,6 +24,7 @@
           </div>
         </div>
         <!-- Add Pagination -->
+        <img src="./images/msite_back.svg" alt="msite_back">
         <div class="swiper-pagination"></div>
       </div>
     </nav>
@@ -97,8 +98,8 @@ export default {
   },
 
   components:{
-      HeaderTop,
-      ShopList
+    HeaderTop,
+    ShopList,
   }
 }
 </script>
