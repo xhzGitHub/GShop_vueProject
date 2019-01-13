@@ -4,7 +4,8 @@
 import {
   RECEIVE_ADDRESS,
   RECEIVE_CATEGORYS,
-  RECEIVE_SHOPS
+  RECEIVE_SHOPS,
+  RECEIVE_USERS
 } from './mutation-types'
 
 import {
@@ -48,4 +49,9 @@ export default {
       commit(RECEIVE_SHOPS, {shops});
     }
   },
+
+  // 获取用户信息
+  receiveUsers ({commit}, {user}){
+    commit(RECEIVE_USERS, {user})
+  }
 }

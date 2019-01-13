@@ -160,7 +160,7 @@
           if(result.code === 0) {
             const user = result.data;
             // 将user 保存在state
-
+            this.$store.dispatch('receiveUsers', user);
             //跳转路由至个人中心
             this.$router.replace('/profile');
 
